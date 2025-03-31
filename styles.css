@@ -1,0 +1,223 @@
+:root {
+    --bg-color: #1a1a1a;
+    --primary-color: #2a2a2a;
+    --accent-color: #3498db;
+    --text-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --highlight-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#visualizer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    opacity: 0.8;
+    background: none;
+    pointer-events: none;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: blur(20px) brightness(0.15);
+    transition: all 1s ease;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-text {
+    fill: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.player-container {
+    background: transparent;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.now-playing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    text-align: center;
+}
+
+#song-art {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.track-info {
+    flex-grow: 1;
+}
+
+.track-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.track-info p {
+    font-size: 1.4rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.neo-button {
+    background: #ff0000;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 
+        8px 8px 15px var(--shadow-color),
+        -8px -8px 15px var(--highlight-color),
+        0 0 20px rgba(255, 0, 0, 0.6), 
+        0 0 30px rgba(255, 0, 0, 0.4); 
+    transition: all 0.3s ease;
+}
+
+.neo-button:hover {
+    transform: scale(1.05);
+    background: #ff0000;
+    box-shadow: 
+        8px 8px 15px var(--shadow-color),
+        -8px -8px 15px var(--highlight-color),
+        0 0 30px rgba(255, 0, 0, 0.8), 
+        0 0 50px rgba(255, 0, 0, 0.6);
+}
+
+.neo-button:active {
+    box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.3),
+                inset -8px -8px 15px rgba(255, 255, 255, 0.1);
+}
+
+.neo-button svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+}
+
+.pause-icon {
+    display: none;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.volume-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 4px;
+    background: #ff0000;
+    border-radius: 2px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--text-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-percent {
+    width: 40px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .now-playing {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .track-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .track-info p {
+        font-size: 1.2rem;
+    }
+}

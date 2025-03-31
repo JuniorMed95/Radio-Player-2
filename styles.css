@@ -130,19 +130,19 @@ body {
     box-shadow: 
         8px 8px 15px var(--shadow-color),
         -8px -8px 15px var(--highlight-color),
-        0 0 20px rgba(255, 0, 0, 0.6), 
-        0 0 30px rgba(255, 0, 0, 0.4); 
+        0 0 20px rgba(157, 78, 221, 0.6), 
+        0 0 30px rgba(157, 78, 221, 0.4); 
     transition: all 0.3s ease;
 }
 
 .neo-button:hover {
     transform: scale(1.05);
-    background: #ff0000;
+    background: #9d4edd;
     box-shadow: 
         8px 8px 15px var(--shadow-color),
         -8px -8px 15px var(--highlight-color),
-        0 0 30px rgba(255, 0, 0, 0.8), 
-        0 0 50px rgba(255, 0, 0, 0.6);
+        0 0 30px rgba(157, 78, 221, 0.8), 
+        0 0 50px rgba(157, 78, 221, 0.6);
 }
 
 .neo-button:active {
@@ -176,7 +176,7 @@ input[type="range"] {
     -webkit-appearance: none;
     width: 100px;
     height: 4px;
-    background: #ff0000;
+    background: #9d4edd;
     border-radius: 2px;
     outline: none;
 }

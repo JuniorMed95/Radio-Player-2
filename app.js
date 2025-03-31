@@ -127,7 +127,7 @@ class RadioPlayer {
         
         this.barsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         
-        // Create red bar material
+        // Create bar material
         this.barMaterial = new THREE.LineBasicMaterial({
             color: 0x9fffcb,
             linewidth: 2

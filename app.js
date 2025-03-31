@@ -129,7 +129,7 @@ class RadioPlayer {
         
         // Create red bar material
         this.barMaterial = new THREE.LineBasicMaterial({
-            color: 0xff0000,
+            color: 0x9fffcb,
             linewidth: 2
         });
         

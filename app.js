@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 class RadioPlayer {
     constructor() {
-        this.audio = new Audio('https://media.radiostreamingjm.com/listen/radiojmrockpop/radio.mp3');
+        this.audio = new Audio('https://media.radiostreamingjm.com/listen/radiojmrockpop/mobile.mp3');
         this.audio.crossOrigin = "anonymous";
         this.audio.volume = 1;
         this.isPlaying = false;
@@ -67,7 +67,7 @@ class RadioPlayer {
                     this.audioContext = null;
                 }
                 
-                this.audio = new Audio(`https://media.radiostreamingjm.com/listen/radiojmrockpop/radio.mp3?t=${Date.now()}`);
+                this.audio = new Audio(`https://media.radiostreamingjm.com/listen/radiojmrockpop/mobile.mp3?t=${Date.now()}`);
                 this.audio.crossOrigin = "anonymous";
                 this.audio.volume = this.volumeControl.value;
                 
